@@ -1,0 +1,162 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/stefanjudis/grunt-photoBox"
+
+    >grunt-photobox (v0.9.0)</a>
+</h1>
+<h4>Plugin to prevent your project of broken layout via screenshot photo sessions of your site.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-photobox">module grunt-photobox</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-photobox.grunt-photobox">
+            function <span class="apidocSignatureSpan"></span>grunt-photobox
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-photobox" id="apidoc.module.grunt-photobox">module grunt-photobox</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-photobox.grunt-photobox" id="apidoc.element.grunt-photobox.grunt-photobox">
+        function <span class="apidocSignatureSpan"></span>grunt-photobox
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-photobox = function (grunt) {
+
+  // Project configuration.
+  grunt.initConfig( {
+    // Before generating any new files, remove any previously-created files.
+    clean : {
+      tests : [ &#x27;tmp&#x27; ],
+    },
+
+
+    jshint : {
+      all : [
+        &#x27;Gruntfile.js&#x27;,
+        &#x27;tasks/**/*.js&#x27;,
+        &#x27;test/**/*.js&#x27;
+      ],
+      options: {
+        jshintrc: &#x27;.jshintrc&#x27;
+      }
+    },
+
+
+    // Configuration to be run (and then tested).
+    photobox : {
+      waisenkinder : {
+        options : {
+          indexPath      : &#x27;photobox/&#x27;,
+          screenSizes    : [ &#x27;960&#x27;, &#x27;350&#x27;, &#x27;1200&#x27; ],
+          template       : {
+            name    : &#x27;canvas&#x27;,
+            options : {
+              highlightColor : &#x27;#0000ff&#x27;, // template.options.hightlightColor || highlightcolor || default
+              diffFilter     : &#x27;grayscale&#x27; //  default == no filter &#x27;grayscale&#x27; | &#x27;darker&#x27; | &#x27;brighter&#x27;
+            }
+          },
+                            // &#x27;magic&#x27;,
+          urls           : [ &#x27;http://4waisenkinder.de&#x27; ],
+          timeOut : 1000
+        }
+      }
+    },
+
+
+    // Unit tests.
+    nodeunit :  {
+      tests : [ &#x27;test/**/*Test.js&#x27; ]
+    }
+  } );
+
+  // Actually load this plugin&#x27;s task(s).
+  grunt.loadTasks( &#x27;tasks&#x27; );
+
+  // These plugins provide necessary tasks.
+  grunt.loadNpmTasks( &#x27;grunt-contrib-jshint&#x27; );
+  grunt.loadNpmTasks( &#x27;grunt-contrib-clean&#x27; );
+  grunt.loadNpmTasks( &#x27;grunt-contrib-nodeunit&#x27; );
+
+  grunt.registerTask( &#x27;test&#x27;, [ &#x27;nodeunit&#x27;, &#x27;clean:tests&#x27; ] );
+
+  // By default, lint and run all tests.
+  grunt.registerTask( &#x27;default&#x27;, [ &#x27;jshint&#x27;, &#x27;test&#x27; ] );
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
